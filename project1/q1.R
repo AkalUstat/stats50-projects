@@ -31,7 +31,11 @@ boxplot(
   ylab = expression(hat(p), " value")
 )
 mean_p <- mean(proportions_as_numeric)
+std_dev_p <- sd(proportions_as_numeric)
+std_error_p <- sqrt(1/200 * (mean_p * (1-mean_p)))
 sigma_p <- sqrt(1 / 200 * (mean_p * (1 - mean_p)))
 median_p <- median(proportions_as_numeric)
 range_p <- max(proportions_as_numeric) - min(proportions_as_numeric)
 iqr_p <- IQR(proportions_as_numeric)
+
+std_error_p

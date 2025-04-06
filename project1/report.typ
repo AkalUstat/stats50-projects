@@ -21,7 +21,7 @@ For the purposes of this project, I have used the R programming  language. The e
 
 == 1. Binomial $hat(p)$ Estimation
 
-  #box[$p tilde.eq 0.677 minus.plus 0.033$]
+  #box[$p tilde.eq 0.677 minus.plus 0.067$]
 
 
   We are given the number of success from 200 numbers from a $X tilde "Bin"(40, p)$ population.
@@ -38,7 +38,7 @@ For the purposes of this project, I have used the R programming  language. The e
   Since we can estimate X using $overline(X) = X_1 + X_2 + ... + X_200$ and all values $hat(p_i) = X_i/n = X/40$,
   $mu_(hat(p)) = 1/200 sum_(k=1)^200 hat(p_k) tilde.eq 0.676625 tilde.eq 0.677$. Since $E[hat(p)] = p$, we can say that $p tilde.eq 0.677$.
 
-  Additionally, the standard deviation can be computed $sigma_(hat(p)) tilde.eq sqrt(1/200 dot.op hat(p)(1-hat(p))) tilde.eq 0.03307594 tilde.eq 0.033$.
+  Additionally, the standard deviation can be computed $sigma_(hat(p)) tilde.eq 0.06776574.$ We can also calculate the standard error: $sqrt(1/200 dot.op hat(p)(1-hat(p))) tilde.eq 0.03307594 tilde.eq 0.033$.
 
   $M_hat(p) tilde.eq 0.675$ (since $M_(hat(p)) gt mu_(hat(p))$, the data is left-skewed), range = $0.325$, and IQR = $0.1$.
 
@@ -146,6 +146,7 @@ boxplot(
   ylab = expression(hat(p), " value")
 )
 mean_p <- mean(proportions_as_numeric)
+std_dev_p <- sd(proportions_as_numeric)
 sigma_p <- sqrt(1 / 200 * (mean_p * (1 - mean_p)))
 median_p <- median(proportions_as_numeric)
 range_p <- max(proportions_as_numeric) - min(proportions_as_numeric)

@@ -13,7 +13,7 @@
 
 #align(center)[
   = Project 2 \
-  Akal Ustat Singh, Phillip Gudov \
+  Akal Ustat Singh, Phillip Gudov, Frank Kutsar \
   STATS 50-05, Spring 2025
 ]
 
@@ -41,7 +41,15 @@
     ],
   )
 
-  As we can see, the data is quite different from the normality line. Thus, we have probable reason to suspect that
+  *Histogram*: The distribution is roughly mound-shaped but slightly right-skewed. Most data cluster
+  between 9.8 – 10.5 mg/L, with a thin tail produced by a few lower (≈ 7.7 – 8.3 mg/L) and
+  higher (≈ 11 mg/L) values.
+
+  *Box-plot*: The central 50 % of the data (IQR) lies tightly between ≈ 10.0 and 10.4 mg/L.
+  Four points plot outside the whiskers and are flagged as outliers (two low ≈ 7.7 mg/L
+  and two high ≈ 11 mg/L).
+
+  *Normality plot*: As we can see, the data is quite different from the normality line. Thus, we have probable reason to suspect that
   this data is not from a normal population.
 
   ==== ks.Tests
@@ -62,7 +70,8 @@ $eta "(sample median):" 10.06$
 
 $s = 0.789$
 
-According to the histogram, we have four outliers. We cannot therefore use the $t$-test. It is not good to use the $z$-test: $n lt 50$, so it might not be reasonable to use $s$ to estimate $sigma$; the data is quite likely not even be normal.
+According to the histogram, we have four outliers.
+We cannot therefore use the $t$-test. It is not good to use the $z$-test: $n lt 50$, so it might not be reasonable to use $s$ to estimate $sigma$; the data is quite likely not even be normal.
 
 == 2. Dissolved Oxygen from tap water samples
 
@@ -115,6 +124,12 @@ $overline(x) minus t_0.05 dot.op s/sqrt(n) \
 $.
 
 So, a reasonable lower bound would be [8.91, 15) mg/L (using 15 as the upper bound since the maximum value of the sample data is 9.97. 15 gives us enough buffer).
+
+=== Checking work on paper
+
+#figure(
+  image("IMG_1801.jpg", height:35%),
+)
 
 == 3. Extra Credit
 
@@ -208,7 +223,7 @@ So, we also have a relatively strong positive correlation with $r=0.593$.
 
   #align(center)[
   = Appendix A: R Code for Question 1  \
-  Akal Ustat Singh, Phillip Gustov \
+  Akal Ustat Singh, Phillip Gustov, Frank Kutsar \
   STATS 50-05, Spring 2025
 ]
 
@@ -251,8 +266,8 @@ ks.test(d_oxygen_num, 'pnorm', sample_mean, std_dev)
 ```
 
 #align(center)[
-= Appendix A: R Code for Question 2  \
-Akal Ustat Singh, Phillip Gustov \
+= Appendix B: R Code for Question 2  \
+Akal Ustat Singh, Phillip Gustov, Frank Kutsar \
 STATS 50-05, Spring 2025
 ]
 
@@ -299,8 +314,8 @@ max_value = max(d_oxygen_num)
 ```
 
 #align(center)[
-= Appendix A: R Code for Question 3  \
-Akal Ustat Singh, Phillip Gustov \
+= Appendix C: R Code for Question 3  \
+Akal Ustat Singh, Phillip Gustov, Frank Kutsar \
 STATS 50-05, Spring 2025
 ]
 
